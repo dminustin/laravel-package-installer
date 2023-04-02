@@ -29,8 +29,6 @@ class Installer
             ['y', 'n'],
             ''
         ) !== 'y');
-        $config = new PackageConfig();
-
         (new StepTwo())->run($config);
     }
 

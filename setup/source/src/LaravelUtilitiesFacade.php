@@ -18,6 +18,6 @@ class AMFClassNamePrefixFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'AMFName';
+        return 'AMFProjectName';
     }
 }

@@ -13,7 +13,11 @@ class StepTwo
     {
         Colorizer::newStepBlock('Installing package');
         $dir = __DIR__ . '/../../source';
-        $files = array_merge(glob($dir . '/*'), glob($dir . '/*/*'));
+        $files = array_merge(
+            glob($dir . '/*'),
+            glob($dir . '/*/*'),
+            glob($dir . '/*/*/*')
+        );
         foreach ($files as $fileName) {
             $fileName = realpath($fileName);
             if (is_dir($fileName)) {
