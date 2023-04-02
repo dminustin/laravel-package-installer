@@ -39,7 +39,7 @@
         "test": "./vendor/bin/phpunit ./tests",
         "analyze": "./vendor/bin/phpstan analyze setup/source/src ./tests",
         "cs": [
-            "./vendor/bin/php-cs-fixer --allow-risky=yes fix setup/source/src",
+            "./vendor/bin/php-cs-fixer --allow-risky=yes fix ./src",
             "vendor/bin/php-cs-fixer --allow-risky=yes fix ./tests"
         ],
         "publish": [
