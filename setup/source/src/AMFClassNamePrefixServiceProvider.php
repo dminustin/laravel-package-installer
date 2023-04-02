@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AMFNamespace\AMFClassNamePrefix;
+namespace AMFNamespace;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AMFNamespace\AMFClassNamePrefix;
+namespace AMFNamespace;
 
-use AMFNamespace\AMFClassNamePrefix\Skeleton\AMFClassNamePrefixSkeletonClass;
+use AMFNamespace\Skeleton\AMFClassNamePrefixSkeletonClass;
 
 class AMFClassNamePrefix extends AMFClassNamePrefixSkeletonClass
 {

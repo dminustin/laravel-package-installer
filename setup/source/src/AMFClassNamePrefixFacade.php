@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace AMFNamespace\AMFClassNamePrefix;
+namespace AMFNamespace;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \AMFNamespace\AMFClassNamePrefix\Skeleton\AMFClassNamePrefixSkeletonClass
+ * @see \AMFNamespace\Skeleton\AMFClassNamePrefixSkeletonClass
  */
 class AMFClassNamePrefixFacade extends Facade
 {
