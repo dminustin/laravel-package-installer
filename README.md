@@ -2,6 +2,20 @@
 
 This helper generates an empty Laravel package from the command line
 
+## Installation
+```
+composer create-project dminustin/laravel-package-installer %YOURPROJECTNAME% --repository "{\"type\": \"vcs\", \"url\": \"https://github.com/dminustin/laravel-package-installer\"}" --stability=dev
+```
+## Then
+
+```php
+cd setup
+composer install
+cd ..
+php ./setup/setup.php
+```
+
+
 ## Included packages
 ```
 "doctrine/lexer": "^1.0.1",
@@ -25,13 +39,6 @@ runs php-cs-fixer
 
 ### composer public
 runs fixer, analyzer, tests, then if no errors adds changed code to git and pushes to the remote repository
-
-
-## Usage
-
-```php
-php ./setup/setup.php
-```
 
 !! Do not forget to delete setup directory after installation
 
