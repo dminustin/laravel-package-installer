@@ -23,7 +23,7 @@ class StepTwo
             $newName = str_replace('/setup/source/', '/', $fileName);
             $newDir = dirname($newName);
             if (!file_exists($newDir)) {
-                if (!mkdir($newDir, 0644, true)) {
+                if (!mkdir($newDir, 0766, true)) {
                     throw new \RuntimeException('Could not create directory ' . $newDir);
                 }
             }
@@ -40,7 +40,9 @@ class StepTwo
                 } else {
                     $file = str_replace($replaceKey, $data['value'], $file);
                 }
-                file_put_contents($newName, $file);
+                if (!file_put_contents($newName, $file)) {
+                    throw new \RuntimeException('Could not write file '. $newName);
+                }
             }
         }
         echo Colorizer::light_blue(Colorizer::LINE_DIVIDER, true);
