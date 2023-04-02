@@ -1,6 +1,6 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()->exclude('storage')->in(__DIR__ . '/setup/src');
+$finder = PhpCsFixer\Finder::create()->exclude('storage')->in(__DIR__ . '/src');
 
 $config = new PhpCsFixer\Config();
 
