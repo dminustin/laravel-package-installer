@@ -18,6 +18,9 @@ class StepTwo
             glob($dir . '/*/*'),
             glob($dir . '/*/*/*')
         );
+
+        $fileNameReplacer = $config->getOption('class-name-prefix');
+
         foreach ($files as $fileName) {
             $fileName = realpath($fileName);
             if (is_dir($fileName)) {
@@ -25,6 +28,7 @@ class StepTwo
             }
             echo Colorizer::light_blue("Processing $fileName", true);
             $newName = str_replace('/setup/source/', '/', $fileName);
+            $newName = str_replace($fileNameReplacer['replacer'], $fileNameReplacer['value'], $newName);
             $newDir = dirname($newName);
             if (!file_exists($newDir)) {
                 if (!mkdir($newDir, 0766, true)) {
