@@ -20,9 +20,13 @@ class PackageConfig
 
     public function __construct()
     {
+        $dirname = realpath(dirname(__DIR__ . '/../../../../'));
+        $dirname = explode(DIRECTORY_SEPARATOR, $dirname);
+        $projectName = end($dirname);
+        
         $this->options = [
             'vendor' => PromptTypes::promptText('Acme INC', 'Vendor name', 'AMFVendorName'),
-            'name' => PromptTypes::promptText('new-package-name', 'Package name', 'AMFName'),
+            'name' => PromptTypes::promptText($projectName, 'Package name', 'AMFName'),
             'description' => PromptTypes::promptText('Package description', 'Package description', 'AMFDescription'),
             'keywords' => PromptTypes::promptArray([], 'Package keywords', '["AMFKeywords"]'),
             'license' => PromptTypes::promptText('MIT', 'License', 'AMFLicense'),
