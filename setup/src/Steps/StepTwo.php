@@ -35,15 +35,24 @@ class StepTwo
             foreach ($config->getOptionsList() as $key) {
                 $data = $config->getOption($key);
                 $replaceKey = $data['replacer'];
+                $replaceTo = '';
                 if (is_array($data['value'])) {
-                    $file = str_replace(
-                        $replaceKey,
-                        '["' . implode('", ', $data['value']) . '"]',
-                        $file
-                    );
+                    if (empty($data['value'])) {
+                        $replaceTo = '[]';
+                    } else {
+                        $replaceTo = '["' . implode('", ', $data['value']) . '"]';
+                    }
                 } else {
-                    $file = str_replace($replaceKey, $data['value'], $file);
+                    $replaceTo = $data['value'];
                 }
+
+                //Hack to composer.json
+                if (strpos($fileName, 'composer.json')!== false) {
+                    $replaceTo = str_replace('\\', '\\\\', $replaceTo);
+                }
+
+                $file = str_replace($replaceKey, $replaceTo, $file);
+
                 if (!file_put_contents($newName, $file)) {
                     throw new \RuntimeException('Could not write file '. $newName);
                 }
