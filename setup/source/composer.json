@@ -1,0 +1,62 @@
+{
+    "name": "AMFName",
+    "description": "AMFDescription",
+    "keywords": ["AMFKeywords"],
+    "homepage": "AMFHomepage",
+    "license": "AMFLicense",
+    "type": "library",
+    "authors": [
+        {
+            "name": "AMFAuthorName",
+            "email": "AMFAuthorEmail",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "AMFMinimumStability",
+    "require": {
+        "php": "^7.4|^8.0",
+        "psr/cache": "^1.0"
+    },
+    "require-dev": {
+        "doctrine/lexer": "^1.0.1",
+        "egulias/email-validator": "^2.1",
+        "friendsofphp/php-cs-fixer": "*",
+        "laravel/framework": "^8.83",
+        "nunomaduro/larastan": "^1.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AMFNamespace\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AMFNamespace\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit ./tests",
+        "analyze": "./vendor/bin/phpstan analyze setup/source/src ./tests",
+        "cs": [
+            "./vendor/bin/php-cs-fixer --allow-risky=yes fix setup/source/src",
+            "vendor/bin/php-cs-fixer --allow-risky=yes fix ./tests"
+        ],
+        "publish": [
+            "./vendor/bin/composer cs && composer analyze && composer test && git add . && git commit -m 'Publishing' && git push"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AMFNamespace\\AMFClassNamePrefixServiceProvider"
+            ],
+            "aliases": {
+                "AMFClassNamePrefix": "AMFNamespace\\AMFClassNamePrefixFacade"
+            }
+        }
+    }
+}
