@@ -44,7 +44,7 @@ class StepTwo
                     if (empty($data['value'])) {
                         $replaceTo = '[]';
                     } else {
-                        $replaceTo = '["' . implode('", ', $data['value']) . '"]';
+                        $replaceTo = '["' . implode('", "', $data['value']) . '"]';
                     }
                 } else {
                     $replaceTo = $data['value'];
