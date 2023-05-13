@@ -51,7 +51,7 @@ class StepTwo
                 }
 
                 //Hack to composer.json
-                if (strpos($fileName, 'composer.json')!== false) {
+                if (str_contains($fileName, 'composer.json')) {
                     $replaceTo = str_replace('\\', '\\\\', $replaceTo);
                 }
 

@@ -1,0 +1,16 @@
+{
+    "name": "dminustin/scripts",
+    "description": "Some useful command-line scripts to create your package faster",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dminustin\\Scripts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danila Minustin"
+        }
+    ],
+    "require": {}
+}

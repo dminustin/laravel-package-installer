@@ -14,5 +14,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.13@dev",
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "nunomaduro/larastan": "^2.6"
+    },
+    "version": "1.0.0.2"
 }

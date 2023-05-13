@@ -1,0 +1,23 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * Created by dminustin/laravel-package-installer
+ */
+
+namespace /*NAMESPACE*/;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class /*CLASS*/
+ *
+/*PROPERTIES*/
+ */
+class /*CLASS*/ extends Model
+{
+    /*USE*/
+    /*CONNECTION*/
+    protected $table = '/*TABLE*/';
+
+}
