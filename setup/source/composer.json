@@ -24,7 +24,8 @@
         "barryvdh/laravel-ide-helper": "^2.13@dev",
         "laravel/framework": "^8.83",
         "nunomaduro/larastan": "^1.0",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "orchestra/testbench": "dev-develop"
     },
     "autoload": {
         "psr-4": {

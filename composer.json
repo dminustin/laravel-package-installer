@@ -20,5 +20,5 @@
         "nunomaduro/larastan": "^2.6",
         "orchestra/testbench": "dev-develop"
     },
-    "version": "1.0.1.2"
+    "version": "1.0.1.3"
 }
